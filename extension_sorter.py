@@ -12,7 +12,7 @@ WORKDIR = os.path.join(os.getcwd())
 files_to_move = [f for f in os.listdir(WORKDIR)
                  if os.path.isfile(os.path.join(WORKDIR, f))]
 
-extension_dict = dict()
+extension_dict = dict()  # Create dictionnary
 
 for file_tm in files_to_move:
     # Get the clean extension of the file and lower it
@@ -20,8 +20,9 @@ for file_tm in files_to_move:
 
     if ext:  # Be sure the extension isn't absent
         if not ext in extension_dict:  # Check if a file with this extension already exists
-            extension_dict[ext] = list()
+            extension_dict[ext] = list()  # Initiate the dictionnary
 
+        # Append file to the existing dictionnary
         extension_dict[ext].append(file_tm)
 
 
